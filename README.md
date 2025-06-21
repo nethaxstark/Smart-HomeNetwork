@@ -17,6 +17,28 @@ This is a simple Layer 2 + Layer 3 network topology built using **Cisco Packet T
 
 ## 🔧 Configuration Summary
 
+```
+enable
+configure terminal
+interface FastEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+
+interface FastEthernet0/1
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+
+interface FastEthernet1/0
+ip address 192.168.3.1 255.255.255.0
+no shutdown
+
+interface FastEthernet1/1
+ip address 192.168.4.1 255.255.255.0
+no shutdown
+end
+
+```
+
 | Device | IP Address     | Subnet Mask       | Gateway         |
 |--------|----------------|-------------------|------------------|
 | PC0    | 192.168.1.10   | 255.255.255.0     | 192.168.1.1      |
@@ -31,6 +53,23 @@ Router interfaces:
 ---
 
 ## 🌐 Flowchart: Packet Flow
+
+```mermaid
+flowchart LR
+    subgraph LAN1 [LAN 1 - 192.168.1.0/24]
+        PC1["PC1 (192.168.1.10)"] --> SW1
+        PC2["PC2 (192.168.1.11)"] --> SW1
+    end
+    
+    subgraph LAN2 [LAN 2 - 192.168.2.0/24]
+        PC3["PC3 (192.168.2.10)"] --> SW2
+        PC4["PC4 (192.168.2.11)"] --> SW2
+    end
+    
+    SW1 --> RTR["Router
+    (192.168.1.1/24
+    192.168.2.1/24)"] --> SW2
+```
 
 ![Network Flowchart](docs/network_flowchart.png)
 
