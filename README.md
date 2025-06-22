@@ -70,6 +70,17 @@ flowchart LR
     (192.168.1.1/24
     192.168.2.1/24)"] --> SW2
 ```
+---
+
+## 📆 Progress Log
+
+### ✅ 21 June 2025 – Core Network Setup Complete
+- Created a working 2-LAN architecture connected via router
+- Configured static IPs and default gateways
+- Set up inter-network routing using Gigabit interfaces on the router
+- Verified connectivity across subnets using ping tests
+- Created the first network flowchart diagram
+- Planned upcoming phases: VLANs, ACLs, and firewall integration
 
 ![Network Flowchart](docs/network_flowchart.png)
 
